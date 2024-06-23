@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { MantineProvider } from '@mantine/core';
+// import AggregatedCropsTable from './Components/AggregatedCropsTable'
+import AverageCropsTable from './Components/AverageCropsTable'
+
+import AggregatedCropsTable from './Components/AggregatedCropsTable';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <div style={{ padding: 20 }}>
+        <h1>Indian Agriculture Data</h1>
+        <AggregatedCropsTable />
+        <AverageCropsTable />
+      </div>
+    </MantineProvider>
   );
 }
 
